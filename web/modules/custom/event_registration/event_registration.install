@@ -1,0 +1,102 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function event_registration_schema() {
+
+  // =========================
+  // EVENT CONFIG TABLE
+  // =========================
+  $schema['event_config'] = [
+    'description' => 'Stores event configuration data.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'event_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'category' => [
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'event_date' => [
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'reg_start' => [
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'reg_end' => [
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'created' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Created timestamp.',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  // =========================
+  // EVENT REGISTRATION TABLE
+  // =========================
+  $schema['event_registration'] = [
+    'description' => 'Stores user event registrations.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'full_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'college' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'department' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'event_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'References event_config.id',
+      ],
+      'created' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Registration created timestamp.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes' => [
+      'event_id' => ['event_id'],
+    ],
+  ];
+
+  return $schema;
+}
