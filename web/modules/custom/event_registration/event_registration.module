@@ -1,0 +1,35 @@
+<?php
+
+use Drupal\Core\Mail\MailManagerInterface;
+
+/**
+ * Implements hook_mail().
+ */
+function event_registration_mail($key, &$message, $params) {
+  switch ($key) {
+
+    case 'user_registration':
+      $message['subject'] = 'Event Registration Confirmation';
+      $message['body'][] = "Hello {$params['name']},";
+      $message['body'][] = "";
+      $message['body'][] = "You have successfully registered for the event.";
+      $message['body'][] = "";
+      $message['body'][] = "Event Name: {$params['event_name']}";
+      $message['body'][] = "Event Date: {$params['event_date']}";
+      $message['body'][] = "Category: {$params['category']}";
+      $message['body'][] = "";
+      $message['body'][] = "Thank you!";
+      break;
+
+    case 'admin_notification':
+      $message['subject'] = 'New Event Registration';
+      $message['body'][] = "A new user has registered.";
+      $message['body'][] = "";
+      $message['body'][] = "Name: {$params['name']}";
+      $message['body'][] = "Email: {$params['email']}";
+      $message['body'][] = "Event Name: {$params['event_name']}";
+      $message['body'][] = "Event Date: {$params['event_date']}";
+      $message['body'][] = "Category: {$params['category']}";
+      break;
+  }
+}

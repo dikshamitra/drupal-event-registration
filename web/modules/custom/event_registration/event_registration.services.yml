@@ -1,0 +1,8 @@
+services:
+  event_registration.mail_service:
+    class: Drupal\event_registration\Service\EventMailService
+
+  event_registration.repository:
+    class: Drupal\event_registration\Repository\EventRepository
+    arguments: ['@database']
+
