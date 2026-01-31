@@ -243,6 +243,28 @@ Assign via:
 
 ---
 
+## 📸 Project Screenshots
+
+### Module Structure
+![Module Structure](screenshots/01_module_structure.png)
+
+### Event Configuration (Admin)
+![Admin Config](screenshots/02_event_config_admin.png)
+
+### Event Registration Form
+![Registration Form](screenshots/03_registration_form.png)
+
+### Filled Registration Form
+![Filled Form](screenshots/04_filled_form.png)
+
+### Admin Registrations Listing
+![Admin Listing](screenshots/05_admin_listing.png)
+
+### Database Tables
+![Database](screenshots/06_database_tables.png)
+
+---
+
 ## 👩‍💻 Author & Contact
 
 **Diksha Mitra**
