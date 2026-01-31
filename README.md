@@ -32,6 +32,7 @@ A custom Drupal 10 module that allows administrators to configure events and use
 
 ```text
 drupal-event-registration/
+├── screenshots
 ├── composer.json
 ├── composer.lock
 ├── README.md
@@ -45,13 +46,6 @@ drupal-event-registration/
                 ├── event_registration.permissions.yml
                 ├── event_registration.routing.yml
                 ├── event_registration.services.yml
-                ├── screenshots/
-                |   ├── 01_module_structure.png
-                |   ├── 02_event_config_admin.png
-                |   ├── 03_registration_form.png
-                |   ├── 04_filled_form.png
-                |   ├── 05_admin_listing.png
-                |   └── 06_database_tables.png
                 ├── sql/
                 │   └── drupal10.sql
                 └── src/
