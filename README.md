@@ -83,7 +83,7 @@ drupal-event-registration/
    Import the SQL file:
 
    ```text
-   web/modules/custom/event_registration/sql/event_registration_tables.sql
+   web/modules/custom/event_registration/sql/drupal10.sql
    ```
 
 4. **Enable the module**
