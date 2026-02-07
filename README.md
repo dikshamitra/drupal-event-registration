@@ -10,7 +10,7 @@ The module is implemented without using nodes, views, or any contributed modules
 
 ---
 
-##🚀 Project Overview
+## 🚀 Project Overview
 
 This module is designed to solve a common real-world requirement in colleges and organizations — managing event registrations efficiently while maintaining performance, security, and scalability.
 
