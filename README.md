@@ -12,9 +12,15 @@ The module is implemented without using nodes, views, or any contributed modules
 
 ## 🚀 Project Overview
 
-This module is designed to solve a common real-world requirement in colleges and organizations — managing event registrations efficiently while maintaining performance, security, and scalability.
+This module is designed to solve a common real-world requirement in colleges and organizations - managing event registrations efficiently while maintaining performance, security, and scalability.
 
 Unlike traditional Drupal implementations that depend on nodes and Views, this module uses a database-driven architecture, making it lightweight, fast, and suitable for enterprise-level Drupal applications.
+
+---
+
+## 🔍 Problem Statement
+Many institutions rely on third-party tools or content-heavy Drupal nodes for event registrations, which often results in poor performance, limited control, and unnecessary overhead.
+This module provides a lightweight, secure, and scalable event registration system built entirely using custom database tables and Drupal core APIs, making it suitable for real-world institutional use.
 
 ---
 
@@ -40,16 +46,12 @@ Unlike traditional Drupal implementations that depend on nodes and Views, this m
 
 ## 🎯 Why This Module is Different
 
-❌ No Nodes  
-❌ No Views  
-❌ No Contributed Modules  
-
-✅ Custom Database Tables  
-✅ Repository & Service-based Architecture  
-✅ Drupal Mail API Integration  
-✅ PSR-4 & Drupal Coding Standards  
-
-This makes the module **production-ready**, not just an academic prototype.
+- No dependency on nodes, views, or contributed modules
+- Fully custom database-driven architecture
+- Clean separation of concerns using Repository & Service patterns
+- Designed for enterprise-style Drupal development
+- Easily portable across Drupal 10 projects
+- This makes the module production-ready, not just academic.
 
 ---
 
@@ -105,6 +107,19 @@ drupal-event-registration/
                     └── Mail/
                         └── EventRegistrationMail.php
 ```
+
+---
+
+## 🏗️ Architecture & Design Decisions
+
+- Form API + AJAX used for dynamic user experience
+- Repository pattern for database interactions
+- Service-based email handling using Dependency Injection
+- Custom permissions to ensure secure admin access
+- Config API for all admin-configurable values
+- PSR-4 compliant structure following Drupal best practices
+
+No shortcuts, no hardcoding.
 
 ---
 
@@ -314,13 +329,36 @@ Assign via:
 
 ---
 
-## 🔒 Security & Performance
+## 🔒 Security Considerations
 
-- Strong server-side input validation  
-- Secure admin routes protected via permissions  
-- No sensitive data exposed in URLs  
-- Custom database tables for faster queries  
-- No Views or Node overhead  
+- Server-side validation for all user inputs
+- Duplicate registration prevention (Email + Event constraint)
+- Admin routes protected using custom permissions
+- No exposure of sensitive data via URLs or forms
+- Email sanitization via Drupal Mail API
+
+---
+
+## ⚡ Performance & Scalability
+
+- Uses custom tables instead of nodes → faster queries
+- Avoids Views overhead for admin listing
+- Optimized filters for large registration datasets
+- CSV export handled server-side efficiently
+
+The module can easily scale for college fests, conferences, hackathons, or workshops.
+
+---
+
+## 🧪 Code Quality
+
+- Drupal Coding Standards followed
+- Fully compatible with Drupal 10 & PHP 8
+- Clean, readable, maintainable codebase
+- Easily extendable for:
+  - Payment integration
+  - QR-based check-in
+  - Multi-event registrations
 
 ---
 
@@ -338,3 +376,11 @@ Assign via:
 **Diksha Mitra**
 
 Email: dikshamitra3109@gmail.com
+
+--- 
+
+## Project Analysis
+
+This project demonstrates a strong understanding of Drupal 10’s core architecture by avoiding heavy dependencies such as nodes, views, and contributed modules. Instead, it uses a clean, database-driven design with proper separation of concerns via repositories and services. The module follows PSR-4 standards, implements AJAX-based dynamic forms, secure validation, and Drupal Mail API integration. Overall, it reflects real-world Drupal development practices and is suitable for production-level use rather than being just an academic prototype.
+
+---
